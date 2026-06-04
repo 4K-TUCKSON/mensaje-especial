@@ -6,12 +6,12 @@
     <title>Para ti</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Configuración de las imágenes de fondo exactas según tus archivos */
+        /* Configuración de las imágenes de fondo exactas usando %20 para evitar problemas con los espacios en GitHub */
         .bg-img-2 { background-image: url('image.jpg'); background-size: cover; background-position: center; }
-        .bg-img-3 { background-image: url('Image 2.jpg'); background-size: cover; background-position: center; }
-        .bg-img-4 { background-image: url('Image 4.jpg'); background-size: cover; background-position: center; }
-        .bg-img-5 { background-image: url('image 3.webp'); background-size: cover; background-position: center; }
-        .bg-img-9 { background-image: url('Image 5.jpg'); background-size: cover; background-position: center; }
+        .bg-img-3 { background-image: url('Image%202.jpg'); background-size: cover; background-position: center; }
+        .bg-img-4 { background-image: url('Image%205.jpg'); background-size: cover; background-position: center; }
+        .bg-img-5 { background-image: url('image%203.jpg'); background-size: cover; background-position: center; }
+        .bg-img-9 { background-image: url('Image%204.jpg'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="bg-pink-50 min-h-screen font-sans">
@@ -26,18 +26,14 @@
         </button>
     </div>
 
-    <!-- Pantalla 2 (Imagen Abajo) -->
+    <!-- Pantalla 2 -->
     <div id="screen2" class="hidden fixed inset-0 bg-img-2 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
-        
-        <!-- Botón de flecha -->
         <button onclick="goTo('screen2', 'screen3')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
             </svg>
         </button>
-
-        <!-- Recuadro -->
         <div class="relative z-10 bg-white/80 backdrop-blur-sm p-6 md:p-8 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-pink-200 w-full mx-4 mb-4">
             <p class="text-base md:text-xl text-gray-800 leading-relaxed font-medium">
                 "Eres lo más bello que me ha pasado en esta vida, añoro cada momento que pasamos juntos, esos bellos momentos los adoraré toda la vida, y espero creemos muchos más recuerdos juntos en el futuro."
@@ -45,7 +41,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 3 (Imagen Abajo) -->
+    <!-- Pantalla 3 -->
     <div id="screen3" class="hidden fixed inset-0 bg-img-3 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
         <button onclick="goTo('screen3', 'screen4')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
@@ -58,7 +54,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 4 (Imagen Abajo) -->
+    <!-- Pantalla 4 -->
     <div id="screen4" class="hidden fixed inset-0 bg-img-4 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
         <button onclick="goTo('screen4', 'screen5')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
@@ -71,7 +67,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 5 (Imagen Abajo) -->
+    <!-- Pantalla 5 -->
     <div id="screen5" class="hidden fixed inset-0 bg-img-5 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
         <button onclick="goTo('screen5', 'screen6')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
@@ -84,7 +80,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 6 (Fondo color, Centro) -->
+    <!-- Pantalla 6 -->
     <div id="screen6" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
         <button onclick="goTo('screen6', 'screen7')" class="animate-bounce bg-white/90 hover:bg-pink-50 p-3 rounded-full shadow-xl mb-6 transition-colors border-2 border-pink-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
@@ -96,7 +92,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 7 (Fondo color, Centro) -->
+    <!-- Pantalla 7 -->
     <div id="screen7" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
         <button onclick="goTo('screen7', 'screen8')" class="animate-bounce bg-white/90 hover:bg-pink-50 p-3 rounded-full shadow-xl mb-6 transition-colors border-2 border-pink-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
@@ -108,7 +104,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 8 (Fondo color, Centro) -->
+    <!-- Pantalla 8 -->
     <div id="screen8" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
         <button onclick="goTo('screen8', 'screen9')" class="animate-bounce bg-white/90 hover:bg-pink-50 p-3 rounded-full shadow-xl mb-6 transition-colors border-2 border-pink-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
@@ -120,7 +116,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 9 (Imagen Abajo) -->
+    <!-- Pantalla 9 (Corregida a Image 4.jpg) -->
     <div id="screen9" class="hidden fixed inset-0 bg-img-9 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
         <button onclick="goTo('screen9', 'screen10')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
@@ -133,7 +129,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 10 (Fondo color, Centro) -->
+    <!-- Pantalla 10 -->
     <div id="screen10" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
         <button onclick="goTo('screen10', 'screen11')" class="animate-bounce bg-white/90 hover:bg-pink-50 p-3 rounded-full shadow-xl mb-6 transition-colors border-2 border-pink-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
@@ -145,9 +141,8 @@
         </div>
     </div>
 
-    <!-- Pantalla 11 (Final, Fondo color, Centro) -->
+    <!-- Pantalla 11 -->
     <div id="screen11" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
-        <!-- Aquí ya no hay botón de siguiente porque es el final -->
         <div class="bg-white/90 p-6 md:p-8 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-pink-200 w-full mx-4">
             <p class="text-lg md:text-2xl text-pink-600 leading-relaxed font-bold italic">
                 "Gracias por todo mi niña te quiero y te amo y siempre lo hare, con mucho amor y cariño te dedico estas palabras, espero te guste mucho, besitos"
@@ -156,25 +151,20 @@
     </div>
 
     <script>
-        // Esta función hace el trabajo sucio por nosotros para CUALQUIER pantalla
         function goTo(currentId, nextId) {
             const currentScreen = document.getElementById(currentId);
             const nextScreen = document.getElementById(nextId);
 
-            // 1. Desvanecer la pantalla actual
             currentScreen.classList.remove('opacity-100');
             currentScreen.classList.add('opacity-0');
 
-            // 2. Esperar 700ms a que se vuelva transparente
             setTimeout(() => {
                 currentScreen.classList.add('hidden');
                 currentScreen.classList.remove('flex', 'flex-col'); 
 
-                // 3. Preparar la siguiente pantalla (sigue transparente)
                 nextScreen.classList.remove('hidden');
                 nextScreen.classList.add('flex', 'flex-col'); 
 
-                // 4. Mostrar la nueva pantalla suavemente
                 setTimeout(() => {
                     nextScreen.classList.remove('opacity-0');
                     nextScreen.classList.add('opacity-100');
