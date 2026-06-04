@@ -15,8 +15,7 @@
 </head>
 <body class="bg-pink-50 min-h-screen flex items-center justify-center font-sans">
 
-    <!-- Primera Pantalla -->
-    <div id="screen1" class="text-center p-6 transition-opacity duration-700">
+    <div id="screen1" class="text-center p-6 transition-opacity duration-700 opacity-100">
         <h1 class="text-3xl md:text-4xl font-bold text-pink-600 mb-8 italic">
             Este mensaje es para la niña más preciosa en mi vida
         </h1>
@@ -25,9 +24,11 @@
         </button>
     </div>
 
-    <!-- Segunda Pantalla (oculta inicialmente) -->
-    <div id="screen2" class="hidden fixed inset-0 background-image flex items-center justify-center p-4">
-        <div class="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-pink-200">
+    <div id="screen2" class="hidden fixed inset-0 background-image items-center justify-center p-4 opacity-0 transition-opacity duration-1000">
+        
+        <div class="absolute inset-0 bg-black/20"></div> 
+        
+        <div class="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-pink-200">
             <p class="text-lg md:text-xl text-gray-800 leading-relaxed font-medium">
                 "Eres lo más bello que me ha pasado en esta vida, añoro cada momento que pasamos juntos, esos bellos momentos los adoraré toda la vida, y espero creemos muchos más recuerdos juntos en el futuro."
             </p>
@@ -36,8 +37,28 @@
 
     <script>
         function showNext() {
-            document.getElementById('screen1').classList.add('hidden');
-            document.getElementById('screen2').classList.remove('hidden');
+            const screen1 = document.getElementById('screen1');
+            const screen2 = document.getElementById('screen2');
+
+            // 1. Desvanecer la primera pantalla
+            screen1.classList.remove('opacity-100');
+            screen1.classList.add('opacity-0');
+
+            // 2. Esperar 700ms (el tiempo de la animación) para ocultarla del todo y preparar la segunda
+            setTimeout(() => {
+                screen1.classList.add('hidden');
+                
+                // Mostrar la segunda pantalla en el DOM, pero sigue transparente (opacity-0)
+                screen2.classList.remove('hidden');
+                screen2.classList.add('flex'); // Usamos flex para centrar el contenido
+
+                // 3. Dar un pequeñísimo margen para que el navegador procese el cambio a 'flex' antes de subir la opacidad
+                setTimeout(() => {
+                    screen2.classList.remove('opacity-0');
+                    screen2.classList.add('opacity-100');
+                }, 50);
+
+            }, 700);
         }
     </script>
 </body>
