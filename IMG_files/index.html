@@ -6,14 +6,14 @@
     <title>Para ti</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Configuración de las imágenes de fondo exactas usando %20 para los espacios */
-        .bg-img-2 { background-image: url('image.jpg'); background-size: cover; background-position: center; }
-        .bg-img-3 { background-image: url('Image%202.jpg'); background-size: cover; background-position: center; }
-        .bg-img-4 { background-image: url('Image%205.jpg'); background-size: cover; background-position: center; }
+        /* Usamos comillas dobles y espacios normales para que no haya errores en tu PC ni en GitHub */
+        .bg-img-2 { background-image: url("image.jpg"); background-size: cover; background-position: center; }
+        .bg-img-3 { background-image: url("Image 2.jpg"); background-size: cover; background-position: center; }
+        .bg-img-4 { background-image: url("Image 5.jpg"); background-size: cover; background-position: center; }
         
-        /* Imágenes corregidas para la página 5 y 9 */
-        .bg-img-5 { background-image: url('image%203.webp'); background-size: cover; background-position: center; }
-        .bg-img-9 { background-image: url('Image%204.jpg'); background-size: cover; background-position: center; }
+        /* Aquí están exactamente las que me pediste para la página 5 y 9 */
+        .bg-img-5 { background-image: url("image 3.webp"); background-size: cover; background-position: center; }
+        .bg-img-9 { background-image: url("Image 4.jpg"); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="bg-pink-50 min-h-screen font-sans">
@@ -135,6 +135,34 @@
 
     <div id="screen11" class="hidden fixed inset-0 bg-pink-100 flex-col justify-center items-center p-4 opacity-0 transition-opacity duration-1000">
         <div class="bg-white/90 p-6 md:p-8 rounded-3xl shadow-2xl max-w-lg text-center border-4 border-pink-200 w-full mx-4">
-            <p class="text-
+            <p class="text-lg md:text-2xl text-pink-600 leading-relaxed font-bold italic">
+                "Gracias por todo mi niña te quiero y te amo y siempre lo hare, con mucho amor y cariño te dedico estas palabras, espero te guste mucho, besitos"
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function goTo(currentId, nextId) {
+            const currentScreen = document.getElementById(currentId);
+            const nextScreen = document.getElementById(nextId);
+
+            currentScreen.classList.remove('opacity-100');
+            currentScreen.classList.add('opacity-0');
+
+            setTimeout(() => {
+                currentScreen.classList.add('hidden');
+                currentScreen.classList.remove('flex', 'flex-col'); 
+
+                nextScreen.classList.remove('hidden');
+                nextScreen.classList.add('flex', 'flex-col'); 
+
+                setTimeout(() => {
+                    nextScreen.classList.remove('opacity-0');
+                    nextScreen.classList.add('opacity-100');
+                }, 50);
+
+            }, 700);
+        }
+    </script>
 </body>
 </html>
