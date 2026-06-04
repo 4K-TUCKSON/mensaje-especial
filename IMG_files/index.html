@@ -6,12 +6,14 @@
     <title>Para ti</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Configuración de las imágenes de fondo exactas usando %20 para evitar problemas con los espacios en GitHub */
+        /* Configuración de las imágenes de fondo exactas usando %20 para los espacios */
         .bg-img-2 { background-image: url('image.jpg'); background-size: cover; background-position: center; }
         .bg-img-3 { background-image: url('Image%202.jpg'); background-size: cover; background-position: center; }
         .bg-img-4 { background-image: url('Image%205.jpg'); background-size: cover; background-position: center; }
-        .bg-img-5 { background-image: url('image%203.jpg'); background-size: cover; background-position: center; }
-        .bg-img-9 { background-image: url('Image%204.jpg'); background-size: cover; background-position: center; }
+        
+        /* ¡Imágenes intercambiadas aquí! */
+        .bg-img-5 { background-image: url('Image%204.jpg'); background-size: cover; background-position: center; }
+        .bg-img-9 { background-image: url('image%203.jpg'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="bg-pink-50 min-h-screen font-sans">
@@ -116,7 +118,7 @@
         </div>
     </div>
 
-    <!-- Pantalla 9 (Corregida a Image 4.jpg) -->
+    <!-- Pantalla 9 -->
     <div id="screen9" class="hidden fixed inset-0 bg-img-9 flex-col justify-end items-center p-4 pb-16 opacity-0 transition-opacity duration-1000">
         <div class="absolute inset-0 bg-black/20 z-0"></div> 
         <button onclick="goTo('screen9', 'screen10')" class="relative z-10 animate-bounce bg-white/90 hover:bg-pink-100 p-3 rounded-full shadow-xl mb-4 transition-colors border-2 border-pink-200">
